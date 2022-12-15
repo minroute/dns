@@ -7,7 +7,7 @@ import (
 
 func TestA(t *testing.T) {
 	fmt.Printf("%+v", A("www.baidu.com"))
-	fmt.Printf("%+v", AAAA("www.baidu.com"))
+	fmt.Printf("%+v", Aaaa("www.baidu.com"))
 }
 
 func TestMX(t *testing.T) {

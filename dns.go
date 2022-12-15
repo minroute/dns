@@ -4,7 +4,7 @@ import (
 	"net"
 )
 
-func AAAA(domain string) []string {
+func Aaaa(domain string) []string {
 	return a(domain)
 }
 
@@ -51,8 +51,8 @@ type MxRecord struct {
 
 func Mx(domain string) []MxRecord {
 	mxSlice := []MxRecord{}
-	mxrecords, _ := net.LookupMX(domain)
-	for _, mx := range mxrecords {
+	rerecords, _ := net.LookupMX(domain)
+	for _, mx := range rerecords {
 		mxSlice = append(mxSlice, MxRecord{Host: mx.Host, Pref: mx.Pref})
 	}
 	return mxSlice
@@ -69,8 +69,8 @@ func Srv(service, proto, domain string) []*net.SRV {
 
 func Txt(domain string) []string {
 	txtSlice := []string{}
-	txtrecords, _ := net.LookupTXT(domain)
-	for _, txt := range txtrecords {
+	rerecords, _ := net.LookupTXT(domain)
+	for _, txt := range rerecords {
 		txtSlice = append(txtSlice, txt)
 	}
 	return txtSlice
